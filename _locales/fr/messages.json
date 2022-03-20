@@ -1,0 +1,26 @@
+{
+    "extensionDescription": {
+        "message": "Cet addon TST diminue l'opacité des onglets qui n'ont pas été visités depuis un certain temps",
+        "description": "This TST addon fades away tabs that hasn't been visited for a while"
+    },
+    "recentTabsAmount": {
+        "message": "Montant des onglets récents",
+        "description": "Recent tabs amount"
+    },
+    "recentTabsOpacity": {
+        "message": "Opacité des onglets récents",
+        "description": "Recent tabs opacity"
+    },
+    "olderTabsAmount": {
+        "message": "Montant des anciens onglets",
+        "description": "Older tabs amount"
+    },
+    "olderTabOpacity": {
+        "message": "Opacité des anciens onglets",
+        "description": "Older tabs opacity"
+    },
+    "oldestTabOpacity": {
+        "message": "Opacité des onglets les plus anciens",
+        "description": "Oldest tabs opacity"
+    }
+}

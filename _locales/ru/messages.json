@@ -1,0 +1,26 @@
+{
+    "extensionDescription": {
+        "message": "Это расширение уменьшает прозрачность вкладок, которые не посещались долгое время",
+        "description": "This TST addon fades away tabs that hasn't been visited for a while"
+    },
+    "recentTabsAmount": {
+        "message": "Кол-во последних вкладок",
+        "description": "Recent tabs amount"
+    },
+    "recentTabsOpacity": {
+        "message": "Прозрачность последних вкладок",
+        "description": "Recent tabs opacity"
+    },
+    "olderTabsAmount": {
+        "message": "Кол-во более старых вкладок",
+        "description": "Older tabs amount"
+    },
+    "olderTabOpacity": {
+        "message": "Прозрачность более старых вкладок",
+        "description": "Older tabs opacity"
+    },
+    "oldestTabOpacity": {
+        "message": "Прозрачность самых старых вкладок",
+        "description": "Oldest tabs opacity"
+    }
+}

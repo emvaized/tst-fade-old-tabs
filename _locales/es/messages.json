@@ -1,0 +1,26 @@
+{
+    "extensionDescription": {
+        "message": "Este complemento TST desvanece las pestañas que no se han visitado por un tiempo",
+        "description": "This TST addon fades away tabs that hasn't been visited for a while"
+    },
+    "recentTabsAmount": {
+        "message": "Cantidad de pestañas recientes",
+        "description": "Recent tabs amount"
+    },
+    "recentTabsOpacity": {
+        "message": "Opacidad de pestañas recientes",
+        "description": "Recent tabs opacity"
+    },
+    "olderTabsAmount": {
+        "message": "Cantidad de pestañas antiguas",
+        "description": "Older tabs amount"
+    },
+    "olderTabOpacity": {
+        "message": "Opacidad de pestañas antiguas",
+        "description": "Older tabs opacity"
+    },
+    "oldestTabOpacity": {
+        "message": "Opacidad de pestañas más antiguas",
+        "description": "Oldest tabs opacity"
+    }
+}

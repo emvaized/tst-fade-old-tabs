@@ -1,0 +1,26 @@
+{
+    "manifest_version": 2,
+    "default_locale": "en",
+    "name": "[TST] Fade old tabs",
+    "version": "1.0.0",
+    "description": "__MSG_extensionDescription__",
+    "author": "emvaized",
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "tst_fade_old_tabs@emvaized.com"
+        }
+    },
+    "background": {
+        "page": "background.html"
+    },
+    "options_ui": {
+        "page": "options/options.html",
+        "browser_style": true,
+        "chrome_style": true,
+        "open_in_tab": false
+    },
+    "permissions": [
+        "tabs",
+        "storage"
+    ]
+}

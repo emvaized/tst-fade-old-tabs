@@ -1,0 +1,26 @@
+{
+    "extensionDescription": {
+        "message": "This TST addon fades away tabs that hasn't been visited for a while",
+        "description": "This TST addon fades away tabs that hasn't been visited for a while"
+    },
+    "recentTabsAmount": {
+        "message": "Recent tabs amount",
+        "description": "Recent tabs amount"
+    },
+    "recentTabsOpacity": {
+        "message": "Recent tabs opacity",
+        "description": "Recent tabs opacity"
+    },
+    "olderTabsAmount": {
+        "message": "Older tabs amount",
+        "description": "Older tabs amount"
+    },
+    "olderTabOpacity": {
+        "message": "Older tabs opacity",
+        "description": "Older tabs opacity"
+    },
+    "oldestTabOpacity": {
+        "message": "Oldest tabs opacity",
+        "description": "Oldest tabs opacity"
+    }
+}
