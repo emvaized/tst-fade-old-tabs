@@ -22,13 +22,14 @@ browser.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     }
 });
 
-async function registerToTST() {
+async function registerToTST(css) {
     try {
         const self = await browser.management.getSelf();
 
         let success = await browser.runtime.sendMessage(kTST_ID, {
             type: 'register-self',
             name: self.id,
+            style: css,
         });
 
         return success;
@@ -38,14 +39,19 @@ async function registerToTST() {
 }
 
 function init() {
-    registerToTST().then(res => {
-        browser.tabs.onActivated.addListener(applyFadeToTabs);
-        browser.tabs.onCreated.addListener(applyFadeToTabs);
-        browser.tabs.onRemoved.addListener(applyFadeToTabs);
+    /// Load settings
+    browser.storage.local.get().then(function (settingsStored) {
+        applyConfigs(settingsStored);
 
-        /// Load settings
-        browser.storage.local.get().then(function (settingsStored) {
-            applyConfigs(settingsStored);
+        /// Register CSS
+        let css = `
+        .tab.recent-tab { opacity: ${configs.recentTabsOpacity} !important; }
+        .tab.older-tab { opacity: ${configs.olderTabOpacity} !important; }
+        .tab.oldest-tab { opacity: ${configs.oldestTabOpacity} !important; }
+        `;
+
+        registerToTST(css).then(res => {
+            browser.tabs.onActivated.addListener(applyFadeToTabs);
             applyFadeToTabs();
         });
     });
@@ -56,20 +62,7 @@ init();
 function applyConfigs(settingsStored) {
     if (settingsStored !== undefined)
         Object.keys(settingsStored).forEach((key) => configs[key] = settingsStored[key]);
-
-    /// Register CSS
-    let css = `
-        .tab.recent-tab { opacity: ${configs.recentTabsOpacity} !important; }
-        .tab.older-tab { opacity: ${configs.olderTabOpacity} !important; }
-        .tab.oldest-tab { opacity: ${configs.oldestTabOpacity} !important; }
-    `;
-
-    browser.runtime.sendMessage(kTST_ID, {
-        type: "register-self",
-        style: css,
-    });
 }
-
 
 async function applyFadeToTabs() {
     const sortedTabs = await getSortedWinTabs();
