@@ -1,0 +1,26 @@
+{
+    "extensionDescription": {
+        "message": "Met deze TST-add-on worden  inactieve tabbladen grijsgemaakt",
+        "description": "This TST addon fades away tabs that hasn't been visited for a while"
+    },
+    "recentTabsAmount": {
+        "message": "Aantal recente tabbladen",
+        "description": "Recent tabs amount"
+    },
+    "recentTabsOpacity": {
+        "message": "Doorzichtigheid van recente tabbladen",
+        "description": "Recent tabs opacity"
+    },
+    "olderTabsAmount": {
+        "message": "Aantal oudere tabbladen",
+        "description": "Older tabs amount"
+    },
+    "olderTabOpacity": {
+        "message": "Doorzichtigheid van oudere tabbladen",
+        "description": "Older tabs opacity"
+    },
+    "oldestTabOpacity": {
+        "message": "Doorzichtigheid van oudste tabbladen",
+        "description": "Oldest tabs opacity"
+    }
+}
