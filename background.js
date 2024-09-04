@@ -65,38 +65,16 @@ function applyConfigs(settingsStored) {
 }
 
 async function applyFadeToTabs() {
-    const sortedTabs = await getSortedWinTabs();
-
-    const allTabsIDs = sortedTabs.reduce((allIDs, currentTab) => {
-        allIDs.push(currentTab.id);
-        return allIDs;
-    }, []);
-
-    /// Reset opacity states for all tabs
-    browser.runtime.sendMessage(kTST_ID, {
-        type: 'remove-tab-state',
-        tabs: allTabsIDs,
-        state: 'recent-tab',
-    });
-    browser.runtime.sendMessage(kTST_ID, {
-        type: 'remove-tab-state',
-        tabs: allTabsIDs,
-        state: 'older-tab',
-    });
-    browser.runtime.sendMessage(kTST_ID, {
-        type: 'remove-tab-state',
-        tabs: allTabsIDs,
-        state: 'oldest-tab',
-    });
-
-
-    /// Sort tabs by access time
     const recentTabs = [], olderTabs = [], oldestTabs = [];
     const lastRecentTabIndex = parseInt(configs.recentTabsAmount);
     const lastOlderTabIndex = parseInt(configs.recentTabsAmount) + parseInt(configs.olderTabsAmount);
 
-    for (let i = 0, l = allTabsIDs.length; i < l; i++) {
-        const tabId = allTabsIDs[i];
+    const sortedTabs = await getSortedWinTabs();
+    const allTabsIDs = [];
+
+    for (let i = 0, l = sortedTabs.length; i < l; i++) {
+        const tabId = sortedTabs[i].id;
+        allTabsIDs.push(tabId);
 
         if (i >= 0 && i < lastRecentTabIndex) {
             recentTabs.push(tabId);
@@ -106,6 +84,13 @@ async function applyFadeToTabs() {
             oldestTabs.push(tabId);
         }
     }
+
+     /// Reset opacity states for all tabs
+     browser.runtime.sendMessage(kTST_ID, {
+        type: 'remove-tab-state',
+        tabs: allTabsIDs,
+        state: ['recent-tab', 'older-tab', 'oldest-tab']
+    });
 
     /// Apply opacity states
     browser.runtime.sendMessage(kTST_ID, {
