@@ -4,4 +4,4 @@ export const configs = {
     'olderTabsAmount': 5,
     'olderTabOpacity': 0.75,
     'oldestTabOpacity': 0.4,
-};
+}
