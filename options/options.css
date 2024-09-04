@@ -15,3 +15,9 @@ body {
 label {
   cursor: pointer;
 }
+
+hr{
+  width: 100%;
+  color: lightgray;
+  opacity: 0.5;
+}
