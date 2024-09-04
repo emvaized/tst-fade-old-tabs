@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "default_locale": "en",
-    "name": "[TST] Fade old tabs",
+    "name": "[TST] Fade Old Tabs",
     "version": "1.0.1",
     "description": "__MSG_extensionDescription__",
     "author": "emvaized",
@@ -9,6 +9,10 @@
         "gecko": {
             "id": "tst_fade_old_tabs@emvaized.com"
         }
+    },
+    "icons": {
+        "64": "./icon.png",
+        "128": "./icon.png"
     },
     "background": {
         "page": "background.html"
